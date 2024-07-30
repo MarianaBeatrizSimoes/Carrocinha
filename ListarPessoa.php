@@ -29,6 +29,7 @@
             <th>Alterar</th>
             <th>Deletar</th>
         </tr>
+        
         <?php
             while($row = mysqli_fetch_array($result)){
                 echo"<tr>";
