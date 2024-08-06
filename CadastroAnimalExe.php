@@ -7,28 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-<?php
+    <?php
     include('includes/conexao.php');
     $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $endereco = $_POST['endereço'];
-    $bairro = $_POST['bairro'];
-    $cidade = $_POST['cidade'];
-    $cep = $_POST['cep'];
+    $especie = $_POST['especie'];
+    $raca = $_POST['raca'];
+    $datanasc = $_POST['datanasc'];
+    $castrado = $_POST['castrado'];  
+    $pessoa = $_POST['pessoa'];
     echo "<h1>Dados do Cliente</h1>";
     echo "Nome: $nome<br>";
-    echo "Email: $email<br>";
-    echo "Endereço: $endereco<br>";
-    echo "Cidade: $cidade<br>";
-    echo "CEP: $cep<br>";
-   
-    $sql = "INSERT INTO Pessoa(nome, email, endereco, bairro, id_Cidade, cep)";
-    $sql .= " VALUES('".$nome."','".$email."','".$endereco."','".$bairro."', '".$cidade."', '".$cep."')";
+    echo "Espécie: $especie<br>";
+    echo "Raça: $raca<br>";
+    echo "Data de nascimento: $datanasc<br>";
+    echo "Castrado: $castrado<br>";
+    echo "Dono: $pessoa<br>";
+    $sql = "INSERT INTO Animal(nome, especie, raca, datanasc, castrado, id_pessoa)";
+    $sql .= " VALUES('".$nome."','".$especie."','".$raca."','".$datanasc."', '".$castrado."', '".$pessoa."')";
     echo $sql;
     $result = mysqli_query($con,$sql);
     if($result){
         echo "<h2>Dados cadastrados com sucesso</h2>";
-    }else{
+    }
+    else{
         echo "<h2>Erro ao cadastrar</h2>";
         echo mysqli_error($con);
     }

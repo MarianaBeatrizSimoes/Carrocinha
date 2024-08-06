@@ -7,28 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
+<?php
     include('includes/conexao.php');
-    $sql = "SELECT * FROM Cidade";
+    $sql = "SELECT * FROM Animal";
     $result = mysqli_query($con, $sql); //execulta a consulta
     ?>
-    <h1>Consulta de Cidades</h1>
-    <a href="CadastroCidade.html">Cadastrar Nova Cidade</a>
+    <h1>Consulta de Animais</h1>
+    <a href="CadastroAnimal.php">Cadastrar Nova Cidade</a>
     <table align="center" border="1" width="500">
        <tr>
          <th>Código</th>
          <th>Nome</th>
-         <th>Estado</th>
-         <th>Alterar</th>
-         <th>Deletar</th>
+         <th>Espécie</th>
+         <th>Raça</th>
+         <th>Data de nascimento</th>
+         <th>idade</th>
+         <th>Castrado</th>
         </tr>
         <?php //mysqli_fetch_array lê uma linha por vez
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
             echo "<td>".$row['id']."</td>";
             echo "<td>".$row['nome']."</td>";
-            echo "<td>".$row['estado']."</td>";
-            echo "<td><a href='AlteraCidade.php?id=".$row['id']."'>Alterar</a></td>";
+            echo "<td>".$row['especie']."</td>";
+            echo "<td>".$row['raça']."</td>";
+            echo "<td>".$row['datanasc']."</td>";
+            echo "<td>".$row['castrado']."</td>";
+            echo "<td><a href='alteraCidade.php?id=".$row['id']."'>Alterar</a></td>";
             echo "<td><a href='deletaCidade.php?id=".$row['id']."'>Deletar</a></td>";
             echo "</tr>";
         }
