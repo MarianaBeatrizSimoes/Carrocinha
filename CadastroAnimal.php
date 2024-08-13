@@ -29,11 +29,9 @@
                 <input type="date" name="datanasc" id="datanasc">
             </div>
             <div>
-                <label for="castrado">Castrado:</label>
-                   <select name="castrado" id="castrado">
-                    <option value="Sim">Sim</option>
-                    <option value="Não">Não</option>
-                   </select>
+                    <label>Castrado:</label>
+                    <input type="radio" name="castrado" id="castradoSim" value="sim"/><label id="castradoSim">Sim</label>
+                    <input type="radio" name="castrado" id="castradoNao" value="nao"/><label id="castradoNao">Não</label>
                 </div>
                 <div>
                     <label for="pessoa">Dono do animal:</label>
