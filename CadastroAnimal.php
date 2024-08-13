@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <form action="CadastroAnimalExe.php" method="post">
@@ -41,7 +43,7 @@
                     $sql = "SELECT * FROM Pessoa";
                     $result = mysqli_query($con,$sql);
                     while($row = mysqli_fetch_array($result)){
-                        echo "<option values '".$row['id']."'>".$row['nome']."</option>";
+                        echo "<option value='".$row['id']."'>".$row['nome']."</option>";
                     }
                     ?>
                     </select>

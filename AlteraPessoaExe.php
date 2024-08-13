@@ -3,7 +3,7 @@
     $id = $_POST['id'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $endereco = $_POST['endereço'];
+    $endereco = $_POST['endereco'];
     $bairro = $_POST['bairro'];
     $cep = $_POST['cep'];
 ?>
@@ -14,6 +14,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <h1>Alteração dados Cliente</h1>
@@ -24,10 +26,10 @@
     echo"<p>Endereço: $endereco</p>";
     echo"<p>Bairro: $bairro</p>";
     echo"<p>CEP:  $cep</p>";
-    $sql = "UPDATE cliente SET
+    $sql = "UPDATE pessoa SET
             nome = '$nome',
             email = '$email',
-            endereço = '$endereco',
+            endereco = '$endereco',
             bairro = '$bairro',
             cep = '$cep'
             WHERE id = $id";
